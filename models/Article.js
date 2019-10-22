@@ -20,6 +20,10 @@ const ArticleSchema = new Schema({
         type: Boolean,
         require: true,
         default: false
+    },
+    note: {
+        type: Schema.Types.ObjectId,
+        ref: "Note"
     }
 });
 
