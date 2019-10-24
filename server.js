@@ -30,6 +30,9 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlin
 
 mongoose.connect(MONGODB_URI);
 
+require('./routes/apiRoutes')(app);
+require('./routes/htmlRoutes')(app);
+
 app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
   });
