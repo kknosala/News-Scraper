@@ -11,7 +11,7 @@
                         <div class="card">
                             <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
-                                <a href="#" value={{this._id}}class="btn btn-primary">Favorite</a>
+                                <a href="#" value={{this._id}} type="polygon-link" class="btn btn-primary">Favorite</a>
                             </div>
                         </div>
                     </li>
@@ -28,10 +28,11 @@
                     {{#each gamespot}}
                     <li class="list-group-item">
                         <div class="card">
-                            <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
+                            <h5 class="card-header"><a href="https://gamespot.com{{this.link}}"
+                                    target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
-                                <a href="#" class="btn btn-primary">Favorite</a>
+                                <a href="#" value={{this._id}} type="gamespot-link" class="btn btn-primary">Favorite</a>
                             </div>
                         </div>
                     </li>
@@ -48,10 +49,12 @@
                     {{#each destructoid}}
                     <li class="list-group-item">
                         <div class="card">
-                            <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
+                            <h5 class="card-header"><a href="https://www.destructoid.com/{{this.link}}"
+                                    target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
-                                <a href="#" class="btn btn-primary">Favorite</a>
+                                <a href="#" value={{this._id}} type="destructoid-link"
+                                    class="btn btn-primary">Favorite</a>
                             </div>
                         </div>
                     </li>
