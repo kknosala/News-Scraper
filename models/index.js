@@ -1,4 +1,6 @@
 module.exports = {
-    Artcle: require("./Article"),
+    PolyArticle: require("./PolyArticle"),
+    SpotArticle: require("./SpotArticle"),
+    DestArticle: require("./DestArticle"),
     Note: require("./Note")
 }

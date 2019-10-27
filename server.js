@@ -2,12 +2,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require('express-handlebars');
-// Axios and Cheerio for scraping
-const axios = require("axios");
-const cheerio = require("cheerio");
-
-// Require Models folder for database
-const db = require("./models");
 
 // Set Port
 const PORT = 3000;

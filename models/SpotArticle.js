@@ -27,6 +27,6 @@ const ArticleSchema = new Schema({
     }
 });
 
-const Article = mongoose.model("Article", ArticleSchema);
+const SpotArticle = mongoose.model("SpotArticle", ArticleSchema);
 
-module.exports
+module.exports = SpotArticle
