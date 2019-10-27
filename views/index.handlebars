@@ -6,15 +6,16 @@
                     Polygon
                 </div>
                 <ul class="list-group list-group-flush">
-
+                    {{#each polygon}}
                     <li class="list-group-item">
                         <div class="card">
-                            <h5 class="card-header">Featured</h5>
+                            <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
-                                <a href="#" class="btn btn-primary">Favorite</a>
+                                <a href="#" value={{this._id}}class="btn btn-primary">Favorite</a>
                             </div>
                         </div>
                     </li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
@@ -24,17 +25,17 @@
                     Gamespot
                 </div>
                 <ul class="list-group list-group-flush">
+                    {{#each gamespot}}
                     <li class="list-group-item">
                         <div class="card">
-                            <h5 class="card-header">Featured</h5>
+                            <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
+                                <p class="card-text">{{this.summary}}</p>
                                 <a href="#" class="btn btn-primary">Favorite</a>
                             </div>
                         </div>
                     </li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
@@ -44,17 +45,17 @@
                     Destructoid
                 </div>
                 <ul class="list-group list-group-flush">
+                    {{#each destructoid}}
                     <li class="list-group-item">
                         <div class="card">
-                            <h5 class="card-header">Featured</h5>
+                            <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
+                                <p class="card-text">{{this.summary}}</p>
                                 <a href="#" class="btn btn-primary">Favorite</a>
                             </div>
                         </div>
                     </li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
