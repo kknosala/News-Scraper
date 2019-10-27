@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Info -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Local CSS -->
     <link rel="stylesheet" href="./style/style.css">
     <!-- Javascript Links-->
@@ -12,7 +16,19 @@
     <script src="./js/app.js"></script>
     <title>News Scraper</title>
 </head>
+
 <body>
+    <div class="fluid-contianer">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Game News Scraper</h1>
+            <p class="lead">This is a news scraper for Polygon, Gamespot, and Destructoid.</p>
+            <hr class="my-4">
+            <p>Click below to scrape for the newest news articles or to see your favorites!</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Scrape</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Favorites</a>
+        </div>
+    </div>
     {{{body}}}
 </body>
+
 </html>
