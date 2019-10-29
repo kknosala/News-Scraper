@@ -41,10 +41,10 @@ module.exports = app => {
           .attr("href");
 
         db.SpotArticle.create(result)
-          .then(dbArticle =>console.log(dbArticle))
+          .then(dbArticle => console.log(dbArticle))
           .catch(err => console.log(err));
       });
-    })
+    });
 
     axios.get("https://www.destructoid.com/").then(response => {
       const $ = cheerio.load(response.data);
@@ -62,11 +62,34 @@ module.exports = app => {
         result.link = $(this)
           .find("a")
           .attr("href");
-        
+
         db.DestArticle.create(result)
-          .then(dbArticle =>console.log(dbArticle))
+          .then(dbArticle => console.log(dbArticle))
           .catch(err => console.log(err));
       });
-    })
+    });
+  });
+
+  app.put("/api/favorite/add/:company/:id", (req, res) => {
+    switch (req.params.company) {
+      case "polygon":
+        db.PolyArticle.update(
+          { _id: req.params.id },
+          { $set: { saved: true } }
+        ).then(results => res.json(results));
+        break;
+      case "gamespot":
+        db.SpotArticle.update(
+          { _id: req.params.id },
+          { $set: { saved: true } }
+        ).then(results => res.json(results));
+        break;
+      case "destructoid":
+        db.DestArticle.update(
+          { _id: req.params.id },
+          { $set: { saved: true } }
+        ).then(results => res.json(results));
+        break;
+    }
   });
 };
