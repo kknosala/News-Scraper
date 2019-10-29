@@ -92,4 +92,27 @@ module.exports = app => {
         break;
     }
   });
+
+  app.put("/api/favorite/remove/:company/:id", (req, res) => {
+    switch (req.params.company) {
+      case "polygon":
+        db.PolyArticle.update(
+          { _id: req.params.id },
+          { $set: { saved: false } }
+        ).then(results => res.json(results));
+        break;
+      case "gamespot":
+        db.SpotArticle.update(
+          { _id: req.params.id },
+          { $set: { saved: false } }
+        ).then(results => res.json(results));
+        break;
+      case "destructoid":
+        db.DestArticle.update(
+          { _id: req.params.id },
+          { $set: { saved: false } }
+        ).then(results => res.json(results));
+        break;
+    }
+  });
 };
