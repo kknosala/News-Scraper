@@ -1,5 +1,12 @@
 <div class="fluid-container">
-    <div class="row">
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h4>Click the button below to scrape the websites!</h4>
+            <p>You will see the 10 newest articles found on those websites!</p>
+            <a class="btn btn-primary" href="#" role="button" id="scraper">Scrape</a>
+        </div>
+    </div>
+    <div class="row ml-3 mr-3">
         <div class="col">
             <div class="card">
                 <div class="card-header">
@@ -11,8 +18,23 @@
                         <div class="card">
                             <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
+                                {{#if note}}
+                                <h5 class="card-title">Notes</h5>
+                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                    <hr>
+
+                                    <li>
+                                        <b>{{this.note.title}}</b>
+                                    </li>
+                                    <li>
+                                        <i>{{this.note.body}}</i>
+                                    </li>
+                                    <hr>
+                                </ul>
+                                {{/if}}
                                 <button value={{this._id}} company="polygon"
                                     class="btn btn-primary favorite">Favorite</button>
+                                <a href="/notes/polygon/{{this._id}}" class="btn btn-primary">Add a Note</a>
                                 <br><span id={{this._id}} style="color:green"></span>
                             </div>
                         </div>
@@ -34,8 +56,23 @@
                                     target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
+                                {{#if note}}
+                                <h5 class="card-title">Notes</h5>
+                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                    <hr>
+
+                                    <li>
+                                        <b>{{this.note.title}}</b>
+                                    </li>
+                                    <li>
+                                        <i>{{this.note.body}}</i>
+                                    </li>
+                                    <hr>
+                                </ul>
+                                {{/if}}
                                 <button value={{this._id}} company="gamespot"
                                     class="btn btn-primary favorite">Favorite</button>
+                                <a href="/notes/gamespot/{{this._id}}" class="btn btn-primary">Add a Note</a>
                                 <br><span id={{this._id}} style="color:green"></span>
                             </div>
                         </div>
@@ -57,20 +94,24 @@
                                     target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
+                                {{#if note}}
                                 <h5 class="card-title">Notes</h5>
                                 <ul class="list-group-item list-group-flush" style="list-style-type:none;">
                                     <hr>
+
                                     <li>
-                                        <b>Name</b>
+                                        <b>{{this.note.title}}</b>
                                     </li>
                                     <li>
-                                        <i>"Note"</i>
+                                        <i>{{this.note.body}}</i>
                                     </li>
                                     <hr>
                                 </ul>
+                                {{/if}}
                                 <button value={{this._id}} company="destructoid"
                                     class="btn btn-primary favorite">Favorite
                                 </button>
+                                <a href="/notes/destructoid/{{this._id}}" class="btn btn-primary">Add a Note</a>
                                 <br><span id={{this._id}} style="color:green"></span>
                             </div>
                         </div>

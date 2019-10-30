@@ -17,9 +17,10 @@ module.exports = app => {
           .find("h2")
           .find("a")
           .attr("href");
+        result.company = "polygon";
 
         db.PolyArticle.create(result)
-          .then(dbArticle => console.log(dbArticle))
+          .then(dbArticle => location.reload(true))
           .catch(err => console.log(err));
       });
     });
@@ -39,9 +40,10 @@ module.exports = app => {
         result.link = $(this)
           .find("a")
           .attr("href");
+        result.company = "gamespot";
 
         db.SpotArticle.create(result)
-          .then(dbArticle => console.log(dbArticle))
+          .then(dbArticle => location.reload(true))
           .catch(err => console.log(err));
       });
     });
@@ -62,9 +64,10 @@ module.exports = app => {
         result.link = $(this)
           .find("a")
           .attr("href");
+        result.company = "destructoid";
 
         db.DestArticle.create(result)
-          .then(dbArticle => console.log(dbArticle))
+          .then(dbArticle => location.reload(true))
           .catch(err => console.log(err));
       });
     });
@@ -112,6 +115,60 @@ module.exports = app => {
           { _id: req.params.id },
           { $set: { saved: false } }
         ).then(results => res.json(results));
+        break;
+    }
+  });
+
+  app.post("/api/notes/add/:company/:id", (req, res) => {
+    const newNoteId = req.params.id;
+    switch (req.params.company) {
+      case "polygon":
+        db.Note.create(req.body)
+          .then(function(dbNote) {
+            return db.PolyArticle.findOneAndUpdate(
+              { _id: newNoteId },
+              { note: dbNote._id },
+              { new: true }
+            );
+          })
+          .then(function(dbArticle) {
+            res.json(dbArticle);
+          })
+          .catch(function(err) {
+            res.json(err);
+          });
+        break;
+      case "gamespot":
+        db.Note.create(req.body)
+          .then(function(dbNote) {
+            return db.SpotArticle.findOneAndUpdate(
+              { _id: newNoteId },
+              { note: dbNote._id },
+              { new: true }
+            );
+          })
+          .then(function(dbArticle) {
+            res.json(dbArticle);
+          })
+          .catch(function(err) {
+            res.json(err);
+          });
+        break;
+      case "destructoid":
+        db.Note.create(req.body)
+          .then(function(dbNote) {
+            return db.DestArticle.findOneAndUpdate(
+              { _id: newNoteId },
+              { note: dbNote._id },
+              { new: true }
+            );
+          })
+          .then(function(dbArticle) {
+            res.json(dbArticle);
+          })
+          .catch(function(err) {
+            res.json(err);
+          });
         break;
     }
   });

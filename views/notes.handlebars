@@ -1,77 +1,21 @@
-<div class="fluid-container">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    Polygon
+<div class="container">
+    {{#each notes}}
+    <div class="card">
+        <h5 class="card-header">Add a Note</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <form>
+                <div class="form-group">
+                    <label for="note-title">Note Title</label>
+                    <input type="text" class="form-control" id="note-title" placeholder="Title">
                 </div>
-                <ul class="list-group list-group-flush">
-                    {{#each polygon}}
-                    <li class="list-group-item">
-                        <div class="card">
-                            <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
-                            <div class="card-body">
-                                <a href="#" value={{this._id}} type="polygon-link" class="btn btn-primary">Favorite</a>
-                            </div>
-                        </div>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    Gamespot
+                <div class="form-group">
+                    <label for="note-text">Enter your note here:</label>
+                    <textarea class="form-control" id="note-text" rows="3" placeholder="Your note here..."></textarea>
                 </div>
-                <ul class="list-group list-group-flush">
-                    {{#each gamespot}}
-                    <li class="list-group-item">
-                        <div class="card">
-                            <h5 class="card-header"><a href="https://gamespot.com{{this.link}}"
-                                    target="#">{{this.title}}</a></h5>
-                            <div class="card-body">
-                                <p class="card-text">{{this.summary}}</p>
-                                <a href="#" value={{this._id}} type="gamespot-link" class="btn btn-primary">Favorite</a>
-                            </div>
-                        </div>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-
-                <h5 class="card-header">Destructoid</h5>
-
-                <ul class="list-group list-group-flush">
-                    {{#each destructoid}}
-                    <li class="list-group-item">
-                        <div class="card">
-                            <h5 class="card-header"><a href="https://www.destructoid.com/{{this.link}}"
-                                    target="#">{{this.title}}</a></h5>
-                            <div class="card-body">
-                                <p class="card-text">{{this.summary}}</p>
-                                <h5 class="card-title">Notes</h5>
-                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
-                                    <hr>
-                                    <li>
-                                        <b>Name</b>
-                                    </li>
-                                    <li>
-                                        <i>"Note"</i>
-                                    </li>
-                                    <hr>
-                                </ul>
-                                <a href="#" value={{this._id}} type="destructoid-link" class="btn btn-primary">Favorite
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
+            </form>
+            <button class="btn btn-primary add-note" value={{this._id}} company={{this.company}}>Submit</button>
         </div>
     </div>
+    {{/each}}
 </div>

@@ -17,6 +17,10 @@ const ArticleSchema = new Schema({
     require: true,
     default: false
   },
+  company: {
+    type: String,
+    required: true
+  },
   created: {
     type: Date,
     default: Date.now

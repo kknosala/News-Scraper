@@ -11,6 +11,20 @@
                         <div class="card">
                             <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
+                                {{#if note}}
+                                <h5 class="card-title">Notes</h5>
+                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                    <hr>
+
+                                    <li>
+                                        <b>{{this.note.title}}</b>
+                                    </li>
+                                    <li>
+                                        <i>{{this.note.body}}</i>
+                                    </li>
+                                    <hr>
+                                </ul>
+                                {{/if}}
                                 <button value={{this._id}} company="polygon"
                                     class="btn btn-danger unfavorite">Unfavorite</button>
                             </div>
@@ -33,6 +47,20 @@
                                     target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
+                                {{#if note}}
+                                <h5 class="card-title">Notes</h5>
+                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                    <hr>
+
+                                    <li>
+                                        <b>{{this.note.title}}</b>
+                                    </li>
+                                    <li>
+                                        <i>{{this.note.body}}</i>
+                                    </li>
+                                    <hr>
+                                </ul>
+                                {{/if}}
                                 <button value={{this._id}} company="gamespot"
                                     class="btn btn-danger unfavorite">Unfavorite</button>
                             </div>
@@ -55,17 +83,21 @@
                                     target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
+                                {{#if note}}
                                 <h5 class="card-title">Notes</h5>
                                 <ul class="list-group-item list-group-flush" style="list-style-type:none;">
                                     <hr>
+
                                     <li>
-                                        <b>Name</b>
+                                        <b>{{this.note.title}}</b>
                                     </li>
                                     <li>
-                                        <i>"Note"</i>
+                                        <i>{{this.note.body}}</i>
                                     </li>
                                     <hr>
                                 </ul>
+                                {{/if}}
+
                                 <button value={{this._id}} company="destructoid"
                                     class="btn btn-danger unfavorite">Unfavorite
                                 </button>
