@@ -4,9 +4,8 @@ $(document).ready(() => {
 
     $.ajax("/scrape", {
       method: "GET"
-    }).then(function() {
-      location.reload(true);
-    });
+    }).then(function() {});
+    location.reload(true);
   });
 
   $(".favorite").on("click", function(event) {
@@ -54,7 +53,7 @@ $(document).ready(() => {
       method: "POST",
       data: newNote
     }).then(function() {
-      // location.replace("/");
+      location.replace("/");
     });
   });
 });

@@ -20,7 +20,7 @@ module.exports = app => {
         result.company = "polygon";
 
         db.PolyArticle.create(result)
-          .then(dbArticle => location.reload(true))
+          .then(dbArticle => console.log(dbArticle))
           .catch(err => console.log(err));
       });
     });
@@ -43,7 +43,7 @@ module.exports = app => {
         result.company = "gamespot";
 
         db.SpotArticle.create(result)
-          .then(dbArticle => location.reload(true))
+          .then(dbArticle => console.log(dbArticle))
           .catch(err => console.log(err));
       });
     });
@@ -67,7 +67,7 @@ module.exports = app => {
         result.company = "destructoid";
 
         db.DestArticle.create(result)
-          .then(dbArticle => location.reload(true))
+          .then(dbArticle => console.log(dbArticle))
           .catch(err => console.log(err));
       });
     });

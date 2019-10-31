@@ -1,0 +1,29 @@
+html,
+body {
+  background-color: #b6b6b6;
+  color: #d8cc4e;
+}
+
+a,
+h5 {
+  color: #d8ab4e;
+}
+
+.jumbotron {
+  background-color: #33363b;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #d8ab4e;
+  border-color: #d39924;
+}
+
+.btn-primary:hover {
+  background-color: #b48c36;
+  border-color: #d39924;
+}
+
+.intro {
+  color: black;
+}

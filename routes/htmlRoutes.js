@@ -26,15 +26,21 @@ module.exports = app => {
   });
 
   app.get("/favorites", (req, res) => {
-    const all_polygon = db.PolyArticle.find({ saved: true }).sort({
-      created: -1
-    });
-    const all_gamespot = db.SpotArticle.find({ saved: true }).sort({
-      created: -1
-    });
-    const all_destructoid = db.DestArticle.find({ saved: true }).sort({
-      created: -1
-    });
+    const all_polygon = db.PolyArticle.find({ saved: true })
+      .populate("note")
+      .sort({
+        created: -1
+      });
+    const all_gamespot = db.SpotArticle.find({ saved: true })
+      .populate("note")
+      .sort({
+        created: -1
+      });
+    const all_destructoid = db.DestArticle.find({ saved: true })
+      .populate("note")
+      .sort({
+        created: -1
+      });
     Promise.all([all_polygon, all_gamespot, all_destructoid]).then(
       responses => {
         res.render("favorites", {

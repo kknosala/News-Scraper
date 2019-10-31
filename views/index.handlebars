@@ -1,26 +1,27 @@
 <div class="fluid-container">
     <div class="row mb-5">
-        <div class="col text-center">
+        <div class="col text-center intro">
             <h4>Click the button below to scrape the websites!</h4>
             <p>You will see the 10 newest articles found on those websites!</p>
+            <p>Refresh your browser after clicking the scraper!</p>
             <a class="btn btn-primary" href="#" role="button" id="scraper">Scrape</a>
         </div>
     </div>
     <div class="row ml-3 mr-3">
         <div class="col">
-            <div class="card">
-                <div class="card-header">
+            <div class="card bg-dark">
+                <h5 class="card-header">
                     Polygon
-                </div>
+                </h5>
                 <ul class="list-group list-group-flush">
                     {{#each polygon}}
-                    <li class="list-group-item">
-                        <div class="card">
+                    <li class="list-group-item bg-dark">
+                        <div class="card bg-secondary">
                             <h5 class="card-header"><a href={{this.link}} target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 {{#if note}}
-                                <h5 class="card-title">Notes</h5>
-                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                <h5 class="card-title ">Notes</h5>
+                                <ul class="list-group-item list-group-flush bg-secondary" style="list-style-type:none;">
                                     <hr>
 
                                     <li>
@@ -33,8 +34,8 @@
                                 </ul>
                                 {{/if}}
                                 <button value={{this._id}} company="polygon"
-                                    class="btn btn-primary favorite">Favorite</button>
-                                <a href="/notes/polygon/{{this._id}}" class="btn btn-primary">Add a Note</a>
+                                    class="btn btn-primary mt-2 favorite">Favorite</button>
+                                <a href="/notes/polygon/{{this._id}}" class="btn btn-primary mt-2">Add a Note</a>
                                 <br><span id={{this._id}} style="color:green"></span>
                             </div>
                         </div>
@@ -44,21 +45,21 @@
             </div>
         </div>
         <div class="col">
-            <div class="card">
-                <div class="card-header">
+            <div class="card bg-dark">
+                <h5 class="card-header">
                     Gamespot
-                </div>
+                </h5>
                 <ul class="list-group list-group-flush">
                     {{#each gamespot}}
-                    <li class="list-group-item">
-                        <div class="card">
+                    <li class="list-group-item bg-dark">
+                        <div class="card bg-secondary">
                             <h5 class="card-header"><a href="https://gamespot.com{{this.link}}"
                                     target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
                                 {{#if note}}
                                 <h5 class="card-title">Notes</h5>
-                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                <ul class="list-group-item list-group-flush bg-secondary" style="list-style-type:none;">
                                     <hr>
 
                                     <li>
@@ -71,8 +72,8 @@
                                 </ul>
                                 {{/if}}
                                 <button value={{this._id}} company="gamespot"
-                                    class="btn btn-primary favorite">Favorite</button>
-                                <a href="/notes/gamespot/{{this._id}}" class="btn btn-primary">Add a Note</a>
+                                    class="btn btn-primary mt-2 favorite">Favorite</button>
+                                <a href="/notes/gamespot/{{this._id}}" class="btn btn-primary mt-2">Add a Note</a>
                                 <br><span id={{this._id}} style="color:green"></span>
                             </div>
                         </div>
@@ -82,21 +83,21 @@
             </div>
         </div>
         <div class="col">
-            <div class="card">
+            <div class="card bg-dark">
 
                 <h5 class="card-header">Destructoid</h5>
 
                 <ul class="list-group list-group-flush">
                     {{#each destructoid}}
-                    <li class="list-group-item">
-                        <div class="card">
+                    <li class="list-group-item bg-dark">
+                        <div class="card bg-secondary">
                             <h5 class="card-header"><a href="https://www.destructoid.com/{{this.link}}"
                                     target="#">{{this.title}}</a></h5>
                             <div class="card-body">
                                 <p class="card-text">{{this.summary}}</p>
                                 {{#if note}}
                                 <h5 class="card-title">Notes</h5>
-                                <ul class="list-group-item list-group-flush" style="list-style-type:none;">
+                                <ul class="list-group-item list-group-flush bg-secondary" style="list-style-type:none;">
                                     <hr>
 
                                     <li>
@@ -109,9 +110,9 @@
                                 </ul>
                                 {{/if}}
                                 <button value={{this._id}} company="destructoid"
-                                    class="btn btn-primary favorite">Favorite
+                                    class="btn btn-primary mt-2 favorite">Favorite
                                 </button>
-                                <a href="/notes/destructoid/{{this._id}}" class="btn btn-primary">Add a Note</a>
+                                <a href="/notes/destructoid/{{this._id}}" class="btn btn-primary mt-2">Add a Note</a>
                                 <br><span id={{this._id}} style="color:green"></span>
                             </div>
                         </div>
